@@ -1,0 +1,59 @@
+[project]
+name = "clutch"
+dynamic = ["version"]
+description = "Clutch Python Package Manager"
+readme = "README.md"
+license = "LICENSE"
+requires-python = ">=3.8"
+authors = [
+    { name = "Austin Gabel", email = "agabel@gabelmedia.com" },
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+    "pip>=18.0",
+    "setuptools>=36.2.1",
+    "virtualenv",
+    "virtualenv-clone>=0.2.5",
+]
+
+[project.scripts]
+clutch = "clutch:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "clutch/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/clutch",
+]
+
+[project.urls]
+Homepage = "https://github.com/agabel/clutch"
+Documentation = "https://github.com/agabel/Clutch/"
+"Source Code" = "https://github.com/agabel/Clutch/"
+
+[tool.hatch.build]
+sources = ["src"]
+exclude = [
+    '.github',
+    '/.idea',
+]
+
+
+
+
